@@ -100,10 +100,58 @@ a { color: inherit; text-decoration: none; }
 
 .main-nav a:hover { color: var(--text); }
 
-.btn-nav { display: none; }
+a.btn-nav, a.nav-cta-mobile { display: none; }
 
-@media (min-width: 720px) {
-  .btn-nav { display: inline-flex; }
+.nav-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: 10px;
+  border: 1px solid var(--surface-border);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+
+@media (max-width: 799px) {
+  .main-nav {
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    background: var(--bg);
+    border-bottom: 1px solid var(--surface-border);
+    transition: max-height 0.25s ease;
+  }
+
+  .main-nav.is-open {
+    max-height: 360px;
+  }
+
+  .main-nav a {
+    padding: 16px 24px;
+    border-top: 1px solid var(--surface-border);
+    font-size: 1rem;
+  }
+
+  a.nav-cta-mobile {
+    display: block;
+    color: var(--accent);
+    font-weight: 600;
+  }
+}
+
+@media (min-width: 800px) {
+  a.btn-nav { display: inline-flex; }
+  .nav-toggle { display: none; }
 }
 
 /* Buttons */
