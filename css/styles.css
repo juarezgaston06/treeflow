@@ -1,4 +1,5 @@
 :root {
+  color-scheme: dark;
   --bg: #0b0f0d;
   --bg-alt: #0f1512;
   --surface: #121a16;
@@ -12,20 +13,6 @@
   --font-body: "Inter", system-ui, sans-serif;
   --radius: 14px;
   --max-width: 1120px;
-}
-
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme="dark"]) {
-    --bg: #f7faf8;
-    --bg-alt: #eef4f0;
-    --surface: #ffffff;
-    --surface-border: #dfe8e2;
-    --text: #10241a;
-    --text-muted: #4d5f56;
-    --accent: #16a34a;
-    --accent-strong: #15803d;
-    --accent-soft: rgba(22, 163, 74, 0.1);
-  }
 }
 
 * { box-sizing: border-box; }
